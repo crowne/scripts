@@ -1,3 +1,6 @@
+[Environment]::SetEnvironmentVariable("HTTP_PROXY",$null,"User")
+[Environment]::SetEnvironmentVariable("HTTPS_PROXY",$null,"User")
+
 Set-Itemproperty 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings' -name ProxyEnable -value 0
 if (Test-Path $env:USERPROFILE\.m2\settings.xml) {
     Remove-Item $env:USERPROFILE\.m2\settings.xml
