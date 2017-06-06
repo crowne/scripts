@@ -1,5 +1,8 @@
 # start-service cntlm
 
+[Environment]::SetEnvironmentVariable("HTTP_PROXY","http://domain\user@Password:proxyhost.corporate.com:8080","User")
+[Environment]::SetEnvironmentVariable("HTTPS_PROXY","https://domain\user@Password:proxyhost.corporate.com:8080","User")
+
 set-itemproperty 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings' -name ProxyEnable -value 1
 if (Test-Path $env:USERPROFILE\.m2\settings.xml) {
     Remove-Item $env:USERPROFILE\.m2\settings.xml
